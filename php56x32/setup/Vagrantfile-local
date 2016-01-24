@@ -1,0 +1,43 @@
+# -*- mode: ruby -*-
+
+vagrant_home = (ENV['VAGRANT_HOME'].to_s.split.join.length > 0) ? ENV['VAGRANT_HOME'] : "#{ENV['HOME']}/.vagrant.d"
+vagrant_dot  = (ENV['VAGRANT_DOTFILE_PATH'].to_s.split.join.length > 0) ? ENV['VAGRANT_DOTFILE_PATH'] : "#{dir}/.vagrant"
+
+Vagrant.configure('2') do |config|
+  config.vm.box     = "#{data['box']}"
+  config.vm.box_url = "#{data['box_url']}"
+  config.ssh.insert_key = false
+  if data['hostname'].to_s.strip.length != 0
+    config.vm.hostname = "#{data['hostname']}"
+  end
+  if data['box_version'].to_s.strip.length != 0
+    config.vm.box_version = "#{data['box_version']}"
+  end
+  if data['private_network'].to_s != ''
+    config.vm.network 'private_network', ip: "#{data['private_network']}"
+  end
+  config.vm.network :forwarded_port, guest: 22, host: 5807, auto_correct: true
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    if data['proxy'].to_s.strip.length != 0
+      config.proxy.http    = "#{data['proxy']}"
+  	  config.proxy.https  = "#{data['proxy']}"
+	  config.proxy.no_proxy = "localhost,127.0.0.1"
+    end
+  end
+  config.vm.synced_folder "#{data['www_folder']}", "/var/www/html", group: "www-data", owner: "www-data", mount_options: ['dmode=775', 'fmode=774']
+  config.vm.synced_folder "../common", "/home/vagrant/common", create: true,group: "vagrant", owner: "vagrant", mount_options: ['dmode=775', 'fmode=774']
+  config.vm.usable_port_range = (10200..10500)
+
+
+  config.vm.provider "virtualbox" do |virtualbox|
+    virtualbox.gui = false
+    virtualbox.customize ['modifyvm', :id, "--natdnshostresolver1", "on"]
+    virtualbox.customize ['modifyvm', :id, '--memory', "#{data['memory']}"]
+    virtualbox.customize ['modifyvm', :id, '--cpus', "#{data['cpus']}"]
+    virtualbox.customize ['setextradata', :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate//vagrant", '1']
+    if data['hostname'].to_s.strip.length != 0
+      virtualbox.customize ['modifyvm', :id, '--name', config.vm.hostname]
+    end
+  end
+  ssh_username = "vagrant"
+end
