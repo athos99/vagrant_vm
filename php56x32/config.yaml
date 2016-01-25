@@ -1,12 +1,13 @@
 vagrantfile:
-    proxy: "http://bobillierm:xxxxx@xxx.ch:3128"
-    private_network: 192.168.56.101
-    www_folder : 'C:/Devapp/wamp/www'
     box: hashicorp/precise32
     box_url: hashicorp/precise32
-#        box: ubuntu/trusty32
-#        box_url: ubuntu/trusty32
-#        box_version: '=20151218.0.0'
     hostname: php56x32
     memory: '1024'
     cpus: '1'
+    composants:
+      apache
+      php56
+      php5x32_oci
+      composer
+      adminer
+

@@ -1,13 +1,15 @@
 # -*- mode: ruby -*-
 
-Vagrant.configure('2') do |config|
-  config.vm.provision :shell, path: "setup/provision.sh"
-  config.vm.provision :shell, path: "setup/start.sh", run: "always"
-end
 
 dir = File.dirname(File.expand_path(__FILE__))
 require 'yaml'
 configValues = YAML.load_file("#{dir}/config.yaml")
+
+if File.file?("../common/config.yaml")
+  custom = YAML.load_file("../common/config.yaml")
+  configValues.deep_merge!(custom)
+end
+
 
 data = configValues['vagrantfile']
 Vagrant.require_version '>= 1.6.0'
