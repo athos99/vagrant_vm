@@ -1,0 +1,4 @@
+vagrantfile:
+    proxy: "http://bobillierm:xxxxx@xxx.ch:3128"
+    private_network: 192.168.56.101
+    www_folder : 'C:/Devapp/wamp/www'
