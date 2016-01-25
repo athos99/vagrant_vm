@@ -40,6 +40,8 @@ Vagrant.configure('2') do |config|
     end
   end
   ssh_username = "vagrant"
+  config.ssh.username = "vagrant"
+  config.ssh.password = "vagrant"
 
 #  config.vm.provision :shell, path: "setup/provision.sh"
 #  data['composants'].each do |composant|
