@@ -7,9 +7,9 @@ vagrantfile:
     memory: '1024'
     cpus: '1'
     composants:
-      apache
-      php56
-      php5x32_oci
-      composer
-      adminer
+    - php56
+    - php-oci5x32
+    - mysql
+    - composer
+    - adminer
 

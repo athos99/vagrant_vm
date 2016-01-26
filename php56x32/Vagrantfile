@@ -11,7 +11,7 @@ end
 
 data = configValues['vagrantfile']
 Vagrant.require_version '>= 1.6.0'
-eval File.read("#{dir}/setup/Vagrantfile-local")
+eval File.read("../common/script/Vagrantfile-common")
 
 
 
