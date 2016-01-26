@@ -1,0 +1,16 @@
+vagrantfile:
+  box: ubuntu/trusty32
+  box_url: ubuntu/trusty32
+  hostname: php70x32
+  memory: '1024'
+  cpus: '1'
+  composants:
+    - apache2
+    - php70
+    - php-oci70x32
+    - mysql
+    - composer
+    - adminer
+
+
+

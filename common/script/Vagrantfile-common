@@ -42,10 +42,10 @@ Vagrant.configure('2') do |config|
   ssh_username = "vagrant"
   config.ssh.username = "vagrant"
 
-#  config.vm.provision :shell, path: "setup/provision.sh"
-#  data['composants'].each do |composant|
-#    config.vm.provision :shell, path: "../common/provision.sh"
-#  end
   config.vm.provision :shell, path: "setup/provision.sh"
+  config.vm.provision :shell, path: "../common/script/provision.sh"
+  data['composants'].each do |composant|
+    config.vm.provision :shell, path: "../common/script/#{composant}.sh"
+  end
   config.vm.provision :shell, path: "setup/start.sh", run: "always"
 end

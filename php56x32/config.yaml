@@ -1,6 +1,6 @@
 vagrantfile:
-    box: hashicorp/precise32
-    box_url: hashicorp/precise32
+#    box: hashicorp/precise32
+#    box_url: hashicorp/precise32
     hostname: php56x32
     box: precise32
     box_url: http://files.vagrantup.com/precise32.box
