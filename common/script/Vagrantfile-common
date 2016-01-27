@@ -17,12 +17,15 @@ Vagrant.configure('2') do |config|
     config.vm.network 'private_network', ip: "#{data['private_network']}"
   end
   config.vm.network :forwarded_port, guest: 22, host: 5807, auto_correct: true
+
   if Vagrant.has_plugin?("vagrant-proxyconf")
-    if data['proxy'].to_s.strip.length != 0
-      config.proxy.http    = "#{data['proxy']}"
-  	  config.proxy.https  = "#{data['proxy']}"
-	  config.proxy.no_proxy = "localhost,127.0.0.1"
+    if #{ENV['HTTP_PROXY']}.to_s.strip.length != 0
+      config.proxy.http    = "#{ENV['HTTP_PROXY']}"
     end
+    if #{ENV['HTTPS_PROXY']}.to_s.strip.length != 0
+      config.proxy.https    = "#{ENV['HTTPS_PROXY']}"
+    end
+    config.proxy.no_proxy = "localhost,127.0.0.1"
   end
   config.vm.synced_folder "#{data['www_folder']}", "/var/www/html", group: "www-data", owner: "www-data", mount_options: ['dmode=775', 'fmode=774']
   config.vm.synced_folder "../common", "/home/vagrant/common", create: true,group: "vagrant", owner: "vagrant", mount_options: ['dmode=775', 'fmode=774']
