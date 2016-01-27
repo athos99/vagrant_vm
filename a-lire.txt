@@ -80,3 +80,6 @@ voir https://www.vagrantup.com/docs/cli/
 
 
 
+PS: ce package est aussi archivé en version étendue sous https://github.com/athos99/vagrant_vm
+
+
