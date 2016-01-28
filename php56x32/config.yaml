@@ -6,10 +6,11 @@ vagrantfile:
     box_url: http://files.vagrantup.com/precise32.box
     memory: '1024'
     cpus: '1'
+    docroot: /var/www/html
     composants:
-    - php56
-    - php-oci5x32
-    - mysql
-    - composer
-    - adminer
+        - php56
+        - php-oci5x32
+        - mysql
+        - composer
+        - adminer
 

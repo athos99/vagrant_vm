@@ -27,7 +27,13 @@ Vagrant.configure('2') do |config|
     end
     config.proxy.no_proxy = "localhost,127.0.0.1"
   end
-  config.vm.synced_folder "#{data['www_folder']}", "/var/www/html", group: "www-data", owner: "www-data", mount_options: ['dmode=775', 'fmode=774']
+  if data['docroot'].to_s.strip.length != 0
+    docroot =data['docroot']
+  else
+    docroot ="/var/www/html"
+  end
+  docroot =
+  config.vm.synced_folder "#{data['www_folder']}", "#{data['docroot']}", group: "www-data", owner: "www-data", mount_options: ['dmode=775', 'fmode=774']
   config.vm.synced_folder "../common", "/home/vagrant/common", create: true,group: "vagrant", owner: "vagrant", mount_options: ['dmode=775', 'fmode=774']
   config.vm.usable_port_range = (10200..10500)
 
