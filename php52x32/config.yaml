@@ -7,7 +7,7 @@ vagrantfile:
     docroot: /var/www
     composants:
         - php52
-        - php-oci5x32
+        - php-oci52x32
         - php-apc52
         - mysql
         - composer
