@@ -7,10 +7,10 @@ vagrantfile:
     docroot: /var/www/html
     composants:
         - php70
-        - php-oci70x32
-        - mysql
-        - composer
-        - adminer
+#        - php-oci70x32
+#        - mysql
+#        - composer
+#        - adminer
 
 
 
