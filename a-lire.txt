@@ -1,4 +1,4 @@
-Installation environment PHP poste de travail.
+Installation environnement PHP pour un poste de travail.
 
 
 1) Installer Vagrant
@@ -7,36 +7,35 @@ Version pour windows (32 et 64 bits), version minimale 1.8.1
 
 2) Installer vitual BOX
 https://www.virtualbox.org/wiki/Downloads
-VirtualBox  for Windows hosts  , , version minimale 5.0.14
+VirtualBox  for Windows hosts  , version minimale 5.0.14
 Accepter d'installer tous les drivers et options
 
 3) Configurer le proxy
-
-Définir les varaibles d'environements HTTP_PROXY et  HTTPS_PROXY
-Bouton deémarrer, clique sur le bouton droit sur ordinateur et choisir propriété,
-ensuite "paramètres system avancés", puis "variables d'environements"
+Définir les variables d'environnement HTTP_PROXY et  HTTPS_PROXY
+Bouton démarrer, clique sur le bouton droit sur ordinateur et choisir propriété,
+ensuite "paramètres system avancés", puis "variables d'environnement"
 
 Ajouter dans les variables utilisateurs  ( aide http://www.computerhope.com/issues/ch000549.htm)
 
 HTTP_PROXY  -> http://bobillierm:password@proxygeadm.etat-ge.ch:3128
 HTTPS_PROXY  -> http://bobillierm:password@proxygeadm.etat-ge.ch:3128
-( Remplacer bobillierm par votre login et password par votre password !)
+(Remplacer bobillierm par votre login et password par votre password !)
 
 
 
 4) Installation du package VAGRANT_VM
-Créer le rpertoire c:\devapp\vagrant_vm
+Créer le répertoire c:\devapp\vagrant_vm
 
 Depuis ce répertoire, charger les sources depuis SVN
 http://scm.etat-ge.ch:21080/php.drupal/vagrant_vm
 
 
-5) configurer le fichier  C:\Devapp\vagrant_vm\common\config.yaml
+5) Configurer le fichier  C:\Devapp\vagrant_vm\common\config.yaml
     private_network: 192.168.56.101
     www_folder : 'C:/Devapp/wamp/www'
 Modifier www-folder 'C:/Devapp/wamp/www'en donnant le root path de vos sites webs
 
-6) modifirer le fichier host
+6) modifier le fichier host
 Editer le fichier  C:\Windows\System32\drivers\etc\host et ajouter 
 192.168.56.101 php
 
@@ -50,15 +49,15 @@ Vous pouvez aussi ajouter
 7) Ouvrir une fenêtre dos
 allez dans le répertoire c:\devapp\vagrant_vm
 
-Normalement vous avez un rpertoire common et un ou plusieurs répertoires phpxx.
-si la commande set est saisie, les varaibles d'environement HTTP_PROXY et HTTPS_PROXY sont affichées
+Normalement vous avez un répertoire commun et un ou plusieurs répertoires phpxx.
+si la commande set est saisie, les variables d'environnement HTTP_PROXY et HTTPS_PROXY sont affichées
 
 8) Installer le plugin vagrant-proxy
 taper la commande 
 vagrant plugin install vagrant-proxyconf
 
 
-9) générer et démarrer votre VM
+9) Générer et démarrer votre VM
 allez dans le répertoire php56
 
 introduire la commande :
@@ -71,7 +70,7 @@ Un nouvelle vm est créée et un serveur php56 est installé
 http://php
 
 11)
-Depuis la fenetre dos pour eteindre le serveur taper
+Depuis la fenetre dos pour éteindre le serveur taper
 vagrant halt
 
 12) Pour démarrer à nouveau taper
@@ -80,6 +79,5 @@ voir https://www.vagrantup.com/docs/cli/
 
 
 
-PS: ce package est aussi archivé en version étendue sous https://github.com/athos99/vagrant_vm
 
 

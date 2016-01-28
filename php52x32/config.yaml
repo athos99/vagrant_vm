@@ -1,0 +1,14 @@
+vagrantfile:
+    hostname: php52x32
+    box: precise32
+    box_url: http://files.vagrantup.com/precise32.box
+    memory: '1024'
+    cpus: '1'
+    composants:
+    - php52
+    - php-oci5x32
+    - php-apc52
+    - mysql
+    - composer
+    - adminer
+
