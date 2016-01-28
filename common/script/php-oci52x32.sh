@@ -23,12 +23,12 @@ sudo make install
 cd ..
 sudo rm -R oci8-2.0.10
 echo '$$$$$$ add oci extension to php'
-sudo touch /etc/php52/mods-available/oci8.ini
-sudo chmod 777 /etc/php5/mods-available/oci8.ini
-sudo echo 'extension=oci8.so' > /etc/php5/mods-available/oci8.ini
-sudo chmod 777 /etc/php52/mods-available/oci8.ini
-sudo ln -s /etc/php5/mods-available/oci8.ini  /etc/php52/apache2/conf.d/30-oci8.ini
-sudo ln -s /etc/php5/mods-available/oci8.ini  /etc/php52/cli/conf.d/30-oci8.ini
+sudo touch /etc/php52/conf.d/oci8.ini
+sudo chmod 777 /etc/php52/conf.d/oci8.ini
+sudo echo 'extension=oci8.so' > /etc/php52/conf.d/oci8.ini
+sudo chmod 777 /etc/php52/conf.d/oci8.ini
+sudo ln -s /etc/php52/conf.d/oci8.ini  /etc/php52/apache2/conf.d/30-oci8.ini
+sudo ln -s /etc/php52/conf.d/oci8.ini  /etc/php52/cli/conf.d/30-oci8.ini
 sudo service apache2 restart
 echo '$$$$$$ add env oracle'
 sudo echo TNS_ADMIN=/usr/local/instantclient_12_1/network/admin >> /etc/environment
