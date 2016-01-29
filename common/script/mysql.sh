@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 PROVISIONED="$HOME/provisioned/mysql";
 if [[ ! -f $PROVISIONED  ]]; then
 echo '$$$ PROVISION for mySql server'

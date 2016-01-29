@@ -21,5 +21,3 @@ sudo ln -s /etc/php52/conf.d/apc.ini  /etc/php52/apache2/conf.d/30-apc.ini
 sudo ln -s /etc/php52/conf.d/apc.ini  /etc/php52/cli/conf.d/30-apc.ini
 fi
 sudo touch $PROVISIONED
-
-

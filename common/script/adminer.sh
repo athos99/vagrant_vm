@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 PROVISIONED="$HOME/provisioned/adminer";
 if [[ ! -f $PROVISIONED  ]]; then
 echo '$$$ PROVISION for adminer'

@@ -23,3 +23,4 @@ sudo ln -s /vagrant/php.ini  /etc/php52/apache2/conf.d/90-vagrant-php.ini
 sudo ln -s /vagrant/php.ini  /etc/php52/cli/conf.d/90-vagrant-php.ini
 fi
 sudo touch $PROVISIONED
+

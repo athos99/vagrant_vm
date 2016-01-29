@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-
-
 PROVISIONED="$HOME/provisioned/composer";
 if [[ ! -f $PROVISIONED  ]]; then
 echo '$$$ PROVISION for composer'

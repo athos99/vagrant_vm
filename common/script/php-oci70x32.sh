@@ -40,7 +40,6 @@ sudo echo 'export LD_LIBRARY_PATH='$LD_LIBRARY_PATH >> /etc/apache2/envvars
 sudo chmod 777 /etc/apache2/envvars
 fi
 sudo touch $PROVISIONED
-
 sudo mkdir -p /usr/local/instantclient_12_1/network/admin
 sudo cp /home/vagrant/common/tns-admin/* /usr/local/instantclient_12_1/network/admin
 sudo chmod 777 -R /usr/local/instantclient_12_1/network/admin

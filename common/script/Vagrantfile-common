@@ -39,7 +39,6 @@ Vagrant.configure('2') do |config|
 
 
 
-
   config.vm.provider "virtualbox" do |virtualbox|
     if data['showgui'].nil?
       virtualbox.gui = true
