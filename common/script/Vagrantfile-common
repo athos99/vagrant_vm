@@ -14,9 +14,9 @@ Vagrant.configure('2') do |config|
     config.vm.box_version = "#{data['box_version']}"
   end
   if data['private_network'].to_s != ''
-    config.vm.network 'private_network', ip: "#{data['private_network']}", nic_type: "virtio"
+    config.vm.network 'private_network', ip: "#{data['private_network']}"
   end
-  config.vm.network :forwarded_port, guest: 22, host: 5807, auto_correct: true, nic_type: "virtio"
+  config.vm.network :forwarded_port, guest: 22, host: 5807, auto_correct: true
 
   if Vagrant.has_plugin?("vagrant-proxyconf")
     if #{ENV['HTTP_PROXY']}.to_s.strip.length != 0
