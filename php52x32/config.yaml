@@ -1,4 +1,5 @@
 vagrantfile:
+    private_network: 192.168.56.52
     hostname: php52x32
     box: precise32
     box_url: http://files.vagrantup.com/precise32.box
