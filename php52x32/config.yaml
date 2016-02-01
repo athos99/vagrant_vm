@@ -6,6 +6,10 @@ vagrantfile:
     memory: '1024'
     cpus: '1'
     docroot: /var/www
+    synced_folder:
+      f1:
+        source: C:/Devapp/wamp/www/common-libs
+        target: /srv/applic
     composants:
         - php52
         - php-oci52x32
