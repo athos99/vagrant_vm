@@ -22,6 +22,9 @@ HTTPS_PROXY  -> http://bobillierm:password@proxygeadm.etat-ge.ch:3128
 (Remplacer bobillierm par votre login et password par votre password !)
 
 
+ps: Si vous ne voulez pas enregistrer votre mot de passe, vous devez saisir "a la main" ces variable d'environement depuis votre fenêter dos
+
+
 
 4) Installation du package VAGRANT_VM
 Créer le répertoire c:\devapp\vagrant_vm

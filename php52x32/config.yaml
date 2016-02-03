@@ -13,7 +13,7 @@ vagrantfile:
     composants:
         - php52
         - php-oci52x32
-        - php-apc52
+#        - php-apc52
         - mysql
         - composer
         - adminer
