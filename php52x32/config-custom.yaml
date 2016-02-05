@@ -1,0 +1,6 @@
+vagrantfile:
+    private_network: 192.168.56.52
+    showgui: '0'
+
+
+

@@ -12,5 +12,6 @@ vagrantfile:
         - php-oci5x32
         - mysql
         - composer
+        - drush
         - adminer
 

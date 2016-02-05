@@ -1,5 +1,4 @@
 vagrantfile:
-    private_network: 192.168.56.70
     box: ubuntu/trusty32
     box_url: ubuntu/trusty32
     hostname: php70x32
