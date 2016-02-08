@@ -1,5 +1,5 @@
 [mysqld]
-max_heap_table_size = 32M
-max_allowed_packet  = 32M
-query_cache_limit = 10M
+#max_heap_table_size = 32M
+#max_allowed_packet  = 32M
+#query_cache_limit = 10M
 

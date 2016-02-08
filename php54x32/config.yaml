@@ -1,16 +1,14 @@
 vagrantfile:
-#    box: hashicorp/precise32
-#    box_url: hashicorp/precise32
-    hostname: php56x32
+    hostname: php54x32
     box: precise32
     box_url: http://files.vagrantup.com/precise32.box
     memory: '1024'
+    forwarded_port: '5854'
     cpus: '1'
-    forwarded_port: '5856'
-    docroot: /var/www/html
+    docroot: /var/www
     composants:
-        - php56
-        - php-oci5x32
+        - php54
+        - php-oci54x32
         - mysql
         - composer
         - drush

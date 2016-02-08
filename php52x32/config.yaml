@@ -5,6 +5,7 @@ vagrantfile:
     memory: '1024'
     cpus: '1'
     docroot: /var/www
+    forwarded_port: '5852'
     synced_folder:
       f1:
         source: C:/Devapp/wamp/www/common-libs

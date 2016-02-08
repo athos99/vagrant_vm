@@ -3,3 +3,9 @@ php56x32/.vagrant/
 .svn/
 php70x32/.vagrant/
 php52x32/.vagrant/
+php54x32/.vagrant/machines/default/virtualbox/action_provision
+php54x32/.vagrant/machines/default/virtualbox/action_set_name
+php54x32/.vagrant/machines/default/virtualbox/creator_uid
+php54x32/.vagrant/machines/default/virtualbox/id
+php54x32/.vagrant/machines/default/virtualbox/index_uuid
+php54x32/.vagrant/machines/default/virtualbox/synced_folders

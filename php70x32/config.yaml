@@ -5,12 +5,14 @@ vagrantfile:
     memory: '1024'
     cpus: '1'
     docroot: /var/www/html
+    forwarded_port: '5870'
     nictype: virtio
     composants:
         - php70
         - php-oci70x32
         - mysql
         - composer
+        - drush
         - adminer
 
 
