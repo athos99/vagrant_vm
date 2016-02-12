@@ -1,5 +1,6 @@
 vagrantfile:
     showgui: '0'
+    cpus: '1'
 
 
 

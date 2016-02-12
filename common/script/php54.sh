@@ -6,6 +6,7 @@ echo '$$$$$$ set apt repository'
 sudo apt-get install -y software-properties-common python-software-properties curl
 #### https://launchpad.net/~ondrej/+archive/ubuntu/php
 sudo add-apt-repository -y ppa:ondrej/php5-oldstable
+sudo add-apt-repository -y ppa:ondrej/apache2
 sudo apt-get update
 echo '$$$ PROVISION for Apache2'
 sudo apt-get install -y apache2
