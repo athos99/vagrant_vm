@@ -11,9 +11,9 @@ VirtualBox  for Windows hosts  , version minimale 5.0.14
 Accepter d'installer tous les drivers et options
 
 3) Configurer le proxy
-Définir les variables d'environnement HTTP_PROXY et  HTTPS_PROXY
-Bouton démarrer, clique sur le bouton droit sur ordinateur et choisir propriété,
-ensuite "paramètres system avancés", puis "variables d'environnement"
+DÃ©finir les variables d'environnement HTTP_PROXY et  HTTPS_PROXY
+Bouton dÃ©marrer, clique sur le bouton droit sur ordinateur et choisir propriÃ©tÃ©,
+ensuite "paramÃ¨tres system avancÃ©s", puis "variables d'environnement"
 
 Ajouter dans les variables utilisateurs  ( aide http://www.computerhope.com/issues/ch000549.htm)
 
@@ -22,14 +22,14 @@ HTTPS_PROXY  -> http://bobillierm:password@proxygeadm.etat-ge.ch:3128
 (Remplacer bobillierm par votre login et password par votre password !)
 
 
-ps: Si vous ne voulez pas enregistrer votre mot de passe, vous devez saisir "a la main" ces variable d'environement depuis votre fenêter dos
+ps: Si vous ne voulez pas enregistrer votre mot de passe, vous devez saisir "a la main" ces variable d'environement depuis votre fenÃªter dos
 
 
 
 4) Installation du package VAGRANT_VM
-Créer le répertoire c:\devapp\vagrant_vm
+CrÃ©er le rÃ©pertoire c:\devapp\vagrant_vm
 
-Depuis ce répertoire, charger les sources depuis SVN
+Depuis ce rÃ©pertoire, charger les sources depuis SVN
 http://scm.etat-ge.ch:21080/php.drupal/vagrant_vm
 
 
@@ -49,34 +49,34 @@ Vous pouvez aussi ajouter
 
 
 
-7) Ouvrir une fenêtre dos
-allez dans le répertoire c:\devapp\vagrant_vm
+7) Ouvrir une fenÃªtre dos
+allez dans le rÃ©pertoire c:\devapp\vagrant_vm
 
-Normalement vous avez un répertoire commun et un ou plusieurs répertoires phpxx.
-si la commande set est saisie, les variables d'environnement HTTP_PROXY et HTTPS_PROXY sont affichées
+Normalement vous avez un rÃ©pertoire commun et un ou plusieurs rÃ©pertoires phpxx.
+si la commande set est saisie, les variables d'environnement HTTP_PROXY et HTTPS_PROXY sont affichÃ©es
 
 8) Installer le plugin vagrant-proxy
 taper la commande 
 vagrant plugin install vagrant-proxyconf
 
 
-9) Générer et démarrer votre VM
-allez dans le répertoire php56
+9) GÃ©nÃ©rer et dÃ©marrer votre VM
+allez dans le rÃ©pertoire php56
 
 introduire la commande :
 vagrant up
 
-Un nouvelle vm est créée et un serveur php56 est installé
+Un nouvelle vm est crÃ©Ã©e et un serveur php56 est installÃ©
 
 
 10) A la fin de l'installation, allez sur votre navigateur et entrer l'adresse 
 http://php
 
 11)
-Depuis la fenetre dos pour éteindre le serveur taper
+Depuis la fenetre dos pour Ã©teindre le serveur taper
 vagrant halt
 
-12) Pour démarrer à nouveau taper
+12) Pour dÃ©marrer Ã  nouveau taper
 vagrant start
 voir https://www.vagrantup.com/docs/cli/
 
