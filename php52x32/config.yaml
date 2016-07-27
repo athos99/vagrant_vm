@@ -15,7 +15,6 @@ vagrantfile:
         - php-oci52x32
 #        - php-apc52   #ne semble pas 100% fiable
         - mysql
-        - composer
         - adminer
         - mailhog
 

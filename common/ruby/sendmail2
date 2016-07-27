@@ -1,0 +1,12 @@
+#!/usr/bin/php
+<?php
+
+
+if (!is_dir('/var/www/html/mails')) {
+    @mkdir('/var/www/html/mails', 0777, true);
+}
+$input = file_get_contents('php://stdin');
+preg_match('|^To: (.*)|', $input, $matches);
+$filename = '/var/www/html/mails/' . substr(isset($matches[1]) ? $matches[1] : 'error',0,50) . '.' . round(microtime(true), 2) . '.html';
+file_put_contents($filename, $input);
+

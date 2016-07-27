@@ -3,8 +3,8 @@ PROVISIONED="$HOME/provisioned/php-oci70x32";
 if [ ! -f $PROVISIONED  ]; then
 echo '$$$ PROVISION for OCI php7x 32bits'
 sudo apt-get install -y libaio1 libaio-dev unzip
-sudo unzip -o /home/vagrant/common/oracle/instantclient-basic-linux-12.1.0.2.0.zip -d /usr/local/
-sudo unzip -o /home/vagrant/common/oracle/instantclient-sdk-linux-12.1.0.2.0.zip -d /usr/local/
+sudo unzip -o /home/vagrant/common/oracle/instantclient-basic-linux.x64-12.1.0.2.0.zip -d /usr/local/
+sudo unzip -o /home/vagrant/common/oracle/instantclient-sdk-linux.x64-12.1.0.2.0.zip -d /usr/local/
 sudo echo LD_LIBRARY_PATH=/usr/local/instantclient_12_1:$LD_LIBRARY_PATH >> /etc/environment
 export LD_LIBRARY_PATH=/usr/local/instantclient_12_1:$LD_LIBRARY_PATH
 sudo echo ORACLE_HOME=/usr/local/instantclient_12_1 >> /etc/environment

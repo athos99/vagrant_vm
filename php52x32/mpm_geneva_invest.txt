@@ -1,0 +1,10 @@
+Installer les librairies Zend, doctrines, etc
+Dans le répertoire C:\Devapp\wamp\www\common-libs installer les archives de http://scm.etat-ge.ch:21080/cti.indusPHP/common-libs
+
+
+Pour le projet MPM modifier le fichier
+C:\Devapp\wamp\www\workspace\6206_mpm\trunk\etc\local\config.ini
+
+//zendfw.path = "C:\Devapp\wamp\www\common-libs\ZendFramework\ZendFramework-1.10.8\library"
+zendfw.path = "/srv/applic/ZendFramework/ZendFramework-1.10.8/library"
+

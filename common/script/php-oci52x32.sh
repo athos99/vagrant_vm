@@ -2,7 +2,7 @@
 PROVISIONED="$HOME/provisioned/php-oci52x32";
 if [ ! -f $PROVISIONED  ]; then
 echo '$$$ PROVISION for OCI php52 32bits'
-sudo apt-get install libaio1 libaio-dev unzip
+sudo apt-get install -y libaio1 libaio-dev unzip
 sudo unzip -o /home/vagrant/common/oracle/instantclient-basic-linux-12.1.0.2.0.zip -d /usr/local/
 sudo unzip -o /home/vagrant/common/oracle/instantclient-sdk-linux-12.1.0.2.0.zip -d /usr/local/
 sudo echo LD_LIBRARY_PATH=/usr/local/instantclient_12_1:$LD_LIBRARY_PATH >> /etc/environment

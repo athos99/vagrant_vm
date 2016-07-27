@@ -1,5 +1,5 @@
 #!/bin/bash
-echo '$$$ php70x32 START'
+echo '$$$ php70x64 START'
 sudo mkdir -p /var/www/html/logs
 if [[ ! -f "/var/www/html/logs/test_log.php" ]]; then
 sudo echo '<?php $a=$b[1]; ' > /var/www/html/logs/test_log.php

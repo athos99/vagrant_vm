@@ -1,7 +1,7 @@
 #!/bin/bash
-PROVISIONED="$HOME/provisioned/php-oci70x32";
+PROVISIONED="$HOME/provisioned/php-oci56x32";
 if [ ! -f $PROVISIONED  ]; then
-echo '$$$ PROVISION for OCI php7x 32bits'
+echo '$$$ PROVISION for OCI php56x 32bits'
 sudo apt-get install -y libaio1 libaio-dev unzip
 sudo unzip -o /home/vagrant/common/oracle/instantclient-basic-linux-12.1.0.2.0.zip -d /usr/local/
 sudo unzip -o /home/vagrant/common/oracle/instantclient-sdk-linux-12.1.0.2.0.zip -d /usr/local/
@@ -12,23 +12,23 @@ export ORACLE_HOME=/usr/local/instantclient_12_1
 ln -s /usr/local/instantclient_12_1 /usr/local/instantclient
 ln -s /usr/local/instantclient/libclntsh.so.12.1 /usr/local/instantclient/libclntsh.so
 ln -s /usr/local/instantclient/libocci.so.12.1 /usr/local/instantclient/libocci.so
-wget https://pecl.php.net/get/oci8-2.1.0.tgz
-tar -xzvf oci8-2.1.0.tgz
-sudo rm oci8-2.1.0.tgz
-cd oci8-2.1.0
+wget https://pecl.php.net/get/oci8-2.0.10.tgz
+tar -xzvf oci8-2.0.10.tgz
+sudo rm oci8-2.0.10.tgz
+cd oci8-2.0.10
 sudo phpize
 sudo ./configure --with-oci8=shared,instantclient,/usr/local/instantclient
 sudo make
 sudo make install
 cd ..
-sudo rm -R oci8-2.1.0
+sudo rm -R oci8-2.0.10
 echo '$$$$$$ add oci extension to php'
-sudo touch /etc/php/7.0/mods-available/oci8.ini
-sudo chmod 777 /etc/php/7.0/mods-available/oci8.ini
-sudo echo 'extension=oci8.so' > /etc/php/7.0/mods-available/oci8.ini
-sudo chmod 777 /etc/php/7.0/mods-available/oci8.ini
-sudo ln -s /etc/php/7.0/mods-available/oci8.ini /etc/php/7.0/apache2/conf.d/30-oci8.ini
-sudo ln -s /etc/php/7.0/mods-available/oci8.ini /etc/php/7.0/cli/conf.d/30-oci8.ini
+sudo touch /etc/php/5.6/mods-available/oci8.ini
+sudo chmod 777 /etc/php/5.6/mods-available/oci8.ini
+sudo echo 'extension=oci8.so' > /etc/php/5.6/mods-available/oci8.ini
+sudo chmod 777 /etc/php/5.6/mods-available/oci8.ini
+sudo ln -s /etc/php/5.6/mods-available/oci8.ini /etc/php/5.6/apache2/conf.d/30-oci8.ini
+sudo ln -s /etc/php/5.6/mods-available/oci8.ini /etc/php/5.6/cli/conf.d/30-oci8.ini
 sudo service apache2 restart
 echo '$$$$$$ add env oracle'
 sudo echo TNS_ADMIN=/usr/local/instantclient_12_1/network/admin >> /etc/environment
@@ -43,3 +43,5 @@ sudo touch $PROVISIONED
 sudo mkdir -p /usr/local/instantclient_12_1/network/admin
 sudo cp /home/vagrant/common/tns-admin/* /usr/local/instantclient_12_1/network/admin
 sudo chmod 777 -R /usr/local/instantclient_12_1/network/admin
+
+

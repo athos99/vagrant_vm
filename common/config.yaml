@@ -1,4 +1,4 @@
 vagrantfile:
     private_network: 192.168.56.101
     www_folder : 'C:/Devapp/wamp/www'
-    showgui: '1'
+    showgui: '0'

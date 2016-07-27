@@ -1,5 +1,7 @@
 #!/usr/bin/php
 <?php
+
+
 if (!is_dir('/var/www/mails')) {
     @mkdir('/var/www/mails', 0777, true);
 }

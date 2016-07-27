@@ -1,6 +1,5 @@
 vagrantfile:
-    showgui: '0'
-    cpus: '1'
-
+    cpus: '2'
+#    private_network: 192.168.56.56
 
 

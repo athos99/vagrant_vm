@@ -1,0 +1,17 @@
+vagrantfile:
+    box: ubuntu/trusty64
+    box_url: ubuntu/trusty64
+    hostname: php70x64
+    memory: '1024'
+    cpus: '2'
+    docroot: /var/www/html
+    forwarded_port: '5870'
+    nictype: virtio
+    composants:
+        - php70
+        - php-oci70x64
+        - mysql
+        - mailhog2
+        - composer
+        - drush
+        - adminer
