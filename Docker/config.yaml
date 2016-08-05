@@ -1,0 +1,11 @@
+vagrantfile:
+    box: ubuntu/trusty64
+    box_url: ubuntu/trusty64
+    hostname: docker
+    memory: '1024'
+    cpus: '2'
+    docroot: /var/www/html
+    forwarded_port: '5870'
+    nictype: virtio
+    composants:
+        - docker

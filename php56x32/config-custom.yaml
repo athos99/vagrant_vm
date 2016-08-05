@@ -1,5 +1,7 @@
 vagrantfile:
     cpus: '2'
+    memory: '2048'
+
 #    private_network: 192.168.56.56
 
 
