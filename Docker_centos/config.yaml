@@ -1,0 +1,25 @@
+vagrantfile:
+    box: boxcutter/centos72-docker
+    box_url: boxcutter/centos72-docker
+#    box: puppetlabs/centos-6.6-64-nocm
+#    box_url: puppetlabs/centos-6.6-64-nocm
+#    box: ubuntu/trusty64
+#    box_url: ubuntu/trusty64
+#    box: centos/7
+#    box_url: centos/7
+    showgui: '0'
+    private_network: 192.168.56.101
+    hostname: docker_centos
+    memory: '1024'
+    cpus: '1'
+    docroot: ~
+    www_folder : ~
+    forwarded_port: '5870'
+    nictype: virtio
+    composants:
+        - centos
+
+
+
+
+

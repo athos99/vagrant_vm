@@ -1,11 +1,23 @@
 vagrantfile:
     box: ubuntu/trusty64
     box_url: ubuntu/trusty64
+    showgui: '0'
     hostname: docker
     memory: '1024'
-    cpus: '2'
-    docroot: /var/www/html
+    cpus: '1'
+    docroot: ~
     forwarded_port: '5870'
+    private_network: 192.168.56.102
     nictype: virtio
+    synced_folder:
+      f1:
+        source: 'C:/Devapp/wamp/www'
+        target: /var/www/html
     composants:
+        - provision
         - docker
+
+
+
+
+

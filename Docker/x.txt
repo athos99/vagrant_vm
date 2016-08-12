@@ -1,15 +1,16 @@
 [0mBringing machine 'default' up with 'virtualbox' provider...[0m
-[1m==> default: Importing base box 'phusion/ubuntu-14.04-amd64'...[0m
-[0m[K[0m[0mProgress: 20%[0m[0m[K[0m[0mProgress: 30%[0m[0m[K[0m[0mProgress: 90%[0m[0m[K[0m[1m==> default: Matching MAC address for NAT networking...[0m
-[1m==> default: Checking if box 'phusion/ubuntu-14.04-amd64' is up to date...[0m
-[1m==> default: Setting the name of the VM: Docker_default_1470408658457_65694[0m
+[1m==> default: Importing base box 'ubuntu/trusty64'...[0m
+[0m[K[0m[0mProgress: 90%[0m[0m[K[0m[1m==> default: Matching MAC address for NAT networking...[0m
+[1m==> default: Checking if box 'ubuntu/trusty64' is up to date...[0m
+[1m==> default: Setting the name of the VM: Docker_default_1470925686380_72885[0m
 [1m==> default: Clearing any previously set forwarded ports...[0m
+[1m==> default: Fixed port collision for 22 => 5870. Now on port 10201.[0m
 [1m==> default: Clearing any previously set network interfaces...[0m
 [1m==> default: Preparing network interfaces based on configuration...[0m
 [0m    default: Adapter 1: nat[0m
 [0m    default: Adapter 2: hostonly[0m
 [1m==> default: Forwarding ports...[0m
-[0m    default: 22 (guest) => 5870 (host) (adapter 1)[0m
+[0m    default: 22 (guest) => 10201 (host) (adapter 1)[0m
 [0m    default: 22 (guest) => 2222 (host) (adapter 1)[0m
 [1m==> default: Running 'pre-boot' VM customizations...[0m
 [1m==> default: Booting VM...[0m
@@ -26,7 +27,7 @@
     default: virtual machine match the version of VirtualBox you have installed on
     default: your host and reload your VM.
     default: 
-    default: Guest Additions Version: 4.3.6
+    default: Guest Additions Version: 4.3.36
     default: VirtualBox Version: 5.1[0m
 [1m==> default: Setting hostname...[0m
 [1m==> default: Configuring and enabling network interfaces...[0m
@@ -37,111 +38,413 @@
 [0m    default: /var/www/html => C:/Devapp/wamp/www[0m
 [0m    default: /home/vagrant/common => C:/Devapp/vagrant_vm/common[0m
 [1m==> default: Running provisioner: shell...[0m
-[0m    default: Running: C:/Users/BOBILL~1/AppData/Local/Temp/vagrant-shell20160805-9544-h84q2r.sh[0m
+[0m    default: Running: C:/Users/BOBILL~1/AppData/Local/Temp/vagrant-shell20160811-12048-c4dya1.sh[0m
 [1;31m==> default: stdin: is not a tty[0m
 [1;32m==> default: $$$ docker PROVISION[0m
 [1m==> default: Running provisioner: shell...[0m
-[0m    default: Running: C:/Users/BOBILL~1/AppData/Local/Temp/vagrant-shell20160805-9544-zqj9de.sh[0m
+[0m    default: Running: C:/Users/BOBILL~1/AppData/Local/Temp/vagrant-shell20160811-12048-1f4k7p0.sh[0m
 [1;31m==> default: stdin: is not a tty[0m
 [1;32m==> default: $$$ PROVISION[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty InRelease[0m
 [1;32m==> default: Get:1 http://security.ubuntu.com trusty-security InRelease [65.9 kB][0m
-[1;32m==> default: Get:2 http://security.ubuntu.com trusty-security/main Sources [118 kB][0m
-[1;32m==> default: Ign http://us.archive.ubuntu.com trusty InRelease[0m
-[1;32m==> default: Get:3 http://security.ubuntu.com trusty-security/restricted Sources [4,064 B][0m
+[1;32m==> default: Get:2 http://archive.ubuntu.com trusty-updates InRelease [65.9 kB][0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports InRelease[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty Release.gpg[0m
+[1;32m==> default: Get:3 http://security.ubuntu.com trusty-security/main Sources [118 kB][0m
 [1;32m==> default: Get:4 http://security.ubuntu.com trusty-security/universe Sources [38.0 kB][0m
-[1;32m==> default: Ign http://apt.puppetlabs.com trusty InRelease[0m
-[1;32m==> default: Get:5 http://security.ubuntu.com trusty-security/multiverse Sources [2,760 B][0m
-[1;32m==> default: Get:6 http://security.ubuntu.com trusty-security/main amd64 Packages [511 kB][0m
-[1;32m==> default: Get:7 http://us.archive.ubuntu.com trusty-updates InRelease [65.9 kB][0m
-[1;32m==> default: Get:8 http://security.ubuntu.com trusty-security/restricted amd64 Packages [13.0 kB][0m
-[1;32m==> default: Get:9 http://apt.puppetlabs.com trusty Release.gpg [877 B][0m
+[1;32m==> default: Get:5 http://archive.ubuntu.com trusty-updates/main Sources [380 kB][0m
+[1;32m==> default: Get:6 http://archive.ubuntu.com trusty-updates/restricted Sources [5,360 B][0m
+[1;32m==> default: Get:7 http://archive.ubuntu.com trusty-updates/universe Sources [160 kB][0m
+[1;32m==> default: Get:8 http://security.ubuntu.com trusty-security/main amd64 Packages [514 kB][0m
+[1;32m==> default: Get:9 http://archive.ubuntu.com trusty-updates/multiverse Sources [7,137 B][0m
 [1;32m==> default: Get:10 http://security.ubuntu.com trusty-security/universe amd64 Packages [130 kB][0m
-[1;32m==> default: Get:11 http://security.ubuntu.com trusty-security/multiverse amd64 Packages [4,990 B][0m
-[1;32m==> default: Get:12 http://us.archive.ubuntu.com trusty-backports InRelease [65.9 kB][0m
-[1;32m==> default: Get:13 http://security.ubuntu.com trusty-security/main i386 Packages [477 kB][0m
-[1;32m==> default: Get:14 http://security.ubuntu.com trusty-security/restricted i386 Packages [12.7 kB][0m
-[1;32m==> default: Get:15 http://apt.puppetlabs.com trusty Release [54.1 kB][0m
-[1;32m==> default: Err http://apt.puppetlabs.com trusty Release[0m
-[1;32m==> default:   [0m
-[1;32m==> default: Get:16 http://security.ubuntu.com trusty-security/universe i386 Packages [131 kB][0m
-[1;32m==> default: Get:17 http://us.archive.ubuntu.com trusty Release.gpg [933 B][0m
-[1;32m==> default: Get:18 http://security.ubuntu.com trusty-security/multiverse i386 Packages [5,178 B][0m
-[1;32m==> default: Get:19 http://us.archive.ubuntu.com trusty-updates/main Sources [380 kB][0m
-[1;32m==> default: Get:20 http://security.ubuntu.com trusty-security/main Translation-en [282 kB][0m
-[1;32m==> default: Get:21 http://security.ubuntu.com trusty-security/multiverse Translation-en [2,570 B][0m
-[1;32m==> default: Get:22 http://security.ubuntu.com trusty-security/restricted Translation-en [3,206 B][0m
-[1;32m==> default: Get:23 http://us.archive.ubuntu.com trusty-updates/restricted Sources [5,360 B][0m
-[1;32m==> default: Get:24 http://security.ubuntu.com trusty-security/universe Translation-en [77.2 kB][0m
-[1;32m==> default: Get:25 http://us.archive.ubuntu.com trusty-updates/universe Sources [160 kB][0m
-[1;32m==> default: Get:26 http://us.archive.ubuntu.com trusty-updates/multiverse Sources [7,137 B][0m
-[1;32m==> default: Get:27 http://us.archive.ubuntu.com trusty-updates/main amd64 Packages [879 kB][0m
-[1;32m==> default: Get:28 http://us.archive.ubuntu.com trusty-updates/restricted amd64 Packages [15.9 kB][0m
-[1;32m==> default: Get:29 http://us.archive.ubuntu.com trusty-updates/universe amd64 Packages [367 kB][0m
-[1;32m==> default: Get:30 http://us.archive.ubuntu.com trusty-updates/multiverse amd64 Packages [14.8 kB][0m
-[1;32m==> default: Get:31 http://us.archive.ubuntu.com trusty-updates/main i386 Packages [839 kB][0m
-[1;32m==> default: Get:32 http://us.archive.ubuntu.com trusty-updates/restricted i386 Packages [15.6 kB][0m
-[1;32m==> default: Get:33 http://us.archive.ubuntu.com trusty-updates/universe i386 Packages [369 kB][0m
-[1;32m==> default: Get:34 http://us.archive.ubuntu.com trusty-updates/multiverse i386 Packages [15.2 kB][0m
-[1;32m==> default: Get:35 http://us.archive.ubuntu.com trusty-updates/main Translation-en [423 kB][0m
-[1;32m==> default: Get:36 http://us.archive.ubuntu.com trusty-updates/multiverse Translation-en [7,661 B][0m
-[1;32m==> default: Get:37 http://us.archive.ubuntu.com trusty-updates/restricted Translation-en [3,699 B][0m
-[1;32m==> default: Get:38 http://us.archive.ubuntu.com trusty-updates/universe Translation-en [193 kB][0m
-[1;32m==> default: Get:39 http://us.archive.ubuntu.com trusty-backports/main Sources [9,561 B][0m
-[1;32m==> default: Get:40 http://us.archive.ubuntu.com trusty-backports/restricted Sources [28 B][0m
-[1;32m==> default: Get:41 http://us.archive.ubuntu.com trusty-backports/universe Sources [35.2 kB][0m
-[1;32m==> default: Get:42 http://us.archive.ubuntu.com trusty-backports/multiverse Sources [1,898 B][0m
-[1;32m==> default: Get:43 http://us.archive.ubuntu.com trusty-backports/main amd64 Packages [13.3 kB][0m
-[1;32m==> default: Get:44 http://us.archive.ubuntu.com trusty-backports/restricted amd64 Packages [28 B][0m
-[1;32m==> default: Get:45 http://us.archive.ubuntu.com trusty-backports/universe amd64 Packages [43.2 kB][0m
-[1;32m==> default: Get:46 http://us.archive.ubuntu.com trusty-backports/multiverse amd64 Packages [1,571 B][0m
-[1;32m==> default: Get:47 http://us.archive.ubuntu.com trusty-backports/main i386 Packages [13.3 kB][0m
-[1;32m==> default: Get:48 http://us.archive.ubuntu.com trusty-backports/restricted i386 Packages [28 B][0m
-[1;32m==> default: Get:49 http://us.archive.ubuntu.com trusty-backports/universe i386 Packages [43.2 kB][0m
-[1;32m==> default: Get:50 http://us.archive.ubuntu.com trusty-backports/multiverse i386 Packages [1,552 B][0m
-[1;32m==> default: Get:51 http://us.archive.ubuntu.com trusty-backports/main Translation-en [7,493 B][0m
-[1;32m==> default: Get:52 http://us.archive.ubuntu.com trusty-backports/multiverse Translation-en [1,215 B][0m
-[1;32m==> default: Get:53 http://us.archive.ubuntu.com trusty-backports/restricted Translation-en [28 B][0m
-[1;32m==> default: Get:54 http://us.archive.ubuntu.com trusty-backports/universe Translation-en [36.8 kB][0m
-[1;32m==> default: Get:55 http://us.archive.ubuntu.com trusty Release [58.5 kB][0m
-[1;32m==> default: Get:56 http://us.archive.ubuntu.com trusty/main Sources [1,064 kB][0m
-[1;32m==> default: Get:57 http://us.archive.ubuntu.com trusty/restricted Sources [5,433 B][0m
-[1;32m==> default: Get:58 http://us.archive.ubuntu.com trusty/universe Sources [6,399 kB][0m
-[1;32m==> default: Get:59 http://us.archive.ubuntu.com trusty/multiverse Sources [174 kB][0m
-[1;32m==> default: Get:60 http://us.archive.ubuntu.com trusty/main amd64 Packages [1,350 kB][0m
-[1;32m==> default: Get:61 http://us.archive.ubuntu.com trusty/restricted amd64 Packages [13.0 kB][0m
-[1;32m==> default: Get:62 http://us.archive.ubuntu.com trusty/universe amd64 Packages [5,859 kB][0m
-[1;32m==> default: Get:63 http://us.archive.ubuntu.com trusty/multiverse amd64 Packages [132 kB][0m
-[1;32m==> default: Get:64 http://us.archive.ubuntu.com trusty/main i386 Packages [1,348 kB][0m
-[1;32m==> default: Get:65 http://us.archive.ubuntu.com trusty/restricted i386 Packages [13.4 kB][0m
-[1;32m==> default: Get:66 http://us.archive.ubuntu.com trusty/universe i386 Packages [5,866 kB][0m
-[1;32m==> default: Get:67 http://us.archive.ubuntu.com trusty/multiverse i386 Packages [134 kB][0m
-[1;32m==> default: Hit http://us.archive.ubuntu.com trusty/main Translation-en[0m
-[1;32m==> default: Hit http://us.archive.ubuntu.com trusty/multiverse Translation-en[0m
-[1;32m==> default: Hit http://us.archive.ubuntu.com trusty/restricted Translation-en[0m
-[1;32m==> default: Get:68 http://us.archive.ubuntu.com trusty/universe Translation-en [4,089 kB][0m
-[1;32m==> default: Ign http://us.archive.ubuntu.com trusty/main Translation-en_US[0m
-[1;32m==> default: Ign http://us.archive.ubuntu.com trusty/multiverse Translation-en_US[0m
-[1;32m==> default: Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US[0m
-[1;32m==> default: Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US[0m
-[1;32m==> default: Fetched 32.5 MB in 12s (2,587 kB/s)
+[1;32m==> default: Get:11 http://security.ubuntu.com trusty-security/main Translation-en [283 kB][0m
+[1;32m==> default: Get:12 http://security.ubuntu.com trusty-security/universe Translation-en [77.2 kB][0m
+[1;32m==> default: Get:13 http://archive.ubuntu.com trusty-updates/main amd64 Packages [884 kB][0m
+[1;32m==> default: Get:14 http://archive.ubuntu.com trusty-updates/restricted amd64 Packages [15.9 kB][0m
+[1;32m==> default: Get:15 http://archive.ubuntu.com trusty-updates/universe amd64 Packages [367 kB][0m
+[1;32m==> default: Get:16 http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages [14.8 kB][0m
+[1;32m==> default: Get:17 http://archive.ubuntu.com trusty-updates/main Translation-en [427 kB][0m
+[1;32m==> default: Get:18 http://archive.ubuntu.com trusty-updates/multiverse Translation-en [7,661 B][0m
+[1;32m==> default: Get:19 http://archive.ubuntu.com trusty-updates/restricted Translation-en [3,699 B][0m
+[1;32m==> default: Get:20 http://archive.ubuntu.com trusty-updates/universe Translation-en [193 kB][0m
+[1;32m==> default: Get:21 http://archive.ubuntu.com trusty-backports/main Sources [9,561 B][0m
+[1;32m==> default: Get:22 http://archive.ubuntu.com trusty-backports/restricted Sources [28 B][0m
+[1;32m==> default: Get:23 http://archive.ubuntu.com trusty-backports/universe Sources [35.2 kB][0m
+[1;32m==> default: Get:24 http://archive.ubuntu.com trusty-backports/multiverse Sources [1,898 B][0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/restricted amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/multiverse Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/restricted Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/universe Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty Release[0m
+[1;32m==> default: Get:25 http://archive.ubuntu.com trusty/main Sources [1,064 kB][0m
+[1;32m==> default: Get:26 http://archive.ubuntu.com trusty/restricted Sources [5,433 B][0m
+[1;32m==> default: Get:27 http://archive.ubuntu.com trusty/universe Sources [6,399 kB][0m
+[1;32m==> default: Get:28 http://archive.ubuntu.com trusty/multiverse Sources [174 kB][0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/restricted amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/multiverse amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/multiverse Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/restricted Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/universe Translation-en[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/main Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/multiverse Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/restricted Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/universe Translation-en_US[0m
+[1;32m==> default: Fetched 11.4 MB in 7s (1,467 kB/s)
 ==> default: Reading package lists...[0m
-[1;31m==> default: W[0m
-[1;31m==> default: : [0m
-[1;31m==> default: An error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://apt.puppetlabs.com trusty Release: The following signatures were invalid: KEYEXPIRED 1468001658[0m
-[1;31m==> default: W[0m
-[1;31m==> default: : [0m
-[1;31m==> default: Failed to fetch http://apt.puppetlabs.com/dists/trusty/Release  [0m
-[1;31m==> default: W[0m
-[1;31m==> default: : [0m
-[1;31m==> default: Some index files failed to download. They have been ignored, or old ones used instead.[0m
 [1;32m==> default: Adding user `vagrant' to group `www-data' ...[0m
 [1;32m==> default: Adding user vagrant to group www-data[0m
 [1;32m==> default: Done.[0m
 [1m==> default: Running provisioner: shell...[0m
-[0m    default: Running: C:/Users/BOBILL~1/AppData/Local/Temp/vagrant-shell20160805-9544-1l7xhds.sh[0m
+[0m    default: Running: C:/Users/BOBILL~1/AppData/Local/Temp/vagrant-shell20160811-12048-143161e.sh[0m
+[1;31m==> default: stdin: is not a tty[0m
+[1;32m==> default: $$$ PROVISION for appli docker[0m
+[1;32m==> default: Reading package lists...[0m
+[1;32m==> default: Building dependency tree...[0m
+[1;32m==> default: Reading state information...[0m
+[1;32m==> default: curl is already the newest version.
+==> default: 0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.[0m
+[1;31m==> default: modprobe: FATAL: Module aufs not found.[0m
+[1;31m==> default: + [0m
+[1;31m==> default: sh[0m
+[1;31m==> default:  -c[0m
+[1;31m==> default:  sleep 3; apt-get update[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security InRelease[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty InRelease[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates InRelease[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports InRelease[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/main Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty Release.gpg[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/universe Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/main Sources[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/restricted Sources[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/universe Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/multiverse Sources[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/main amd64 Packages[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/universe Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/restricted amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/multiverse Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/restricted Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/universe Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/main Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/restricted Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/universe Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/multiverse Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/restricted amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/multiverse Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/restricted Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/universe Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty Release[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/main Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/restricted Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/universe Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/multiverse Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/restricted amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/multiverse amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/multiverse Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/restricted Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/universe Translation-en[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/main Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/multiverse Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/restricted Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/universe Translation-en_US[0m
+[1;32m==> default: Reading package lists...[0m
+[1;31m==> default: + [0m
+[1;31m==> default: sh[0m
+[1;31m==> default:  -c[0m
+[1;31m==> default:  sleep 3; apt-get install -y -q linux-image-extra-3.13.0-93-generic linux-image-extra-virtual[0m
+[1;32m==> default: Reading package lists...[0m
+[1;32m==> default: Building dependency tree...[0m
+[1;32m==> default: Reading state information...[0m
+[1;32m==> default: The following extra packages will be installed:[0m
+[1;32m==> default:   crda iw libnl-3-200 libnl-genl-3-200 linux-firmware linux-image-generic[0m
+[1;32m==> default:   wireless-regdb[0m
+[1;32m==> default: The following NEW packages will be installed:[0m
+[1;32m==> default:   crda iw libnl-3-200 libnl-genl-3-200 linux-firmware[0m
+[1;32m==> default:   linux-image-extra-3.13.0-93-generic linux-image-extra-virtual[0m
+[1;32m==> default:   linux-image-generic wireless-regdb[0m
+[1;32m==> default: 0 upgraded, 9 newly installed, 0 to remove and 1 not upgraded.
+==> default: Need to get 70.1 MB of archives.
+==> default: After this operation, 275 MB of additional disk space will be used.
+==> default: Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libnl-3-200 amd64 3.2.21-1ubuntu3 [45.7 kB][0m
+[1;32m==> default: Get:2 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libnl-genl-3-200 amd64 3.2.21-1ubuntu3 [10.2 kB][0m
+[1;32m==> default: Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main wireless-regdb all 2013.02.13-1ubuntu1 [6,456 B][0m
+[1;32m==> default: Get:4 http://archive.ubuntu.com/ubuntu/ trusty/main crda amd64 1.1.2-1ubuntu2 [15.2 kB][0m
+[1;32m==> default: Get:5 http://archive.ubuntu.com/ubuntu/ trusty/main iw amd64 3.4-1 [51.7 kB][0m
+[1;32m==> default: Get:6 http://archive.ubuntu.com/ubuntu/ trusty-updates/main linux-firmware all 1.127.22 [33.2 MB][0m
+[1;32m==> default: Get:7 http://archive.ubuntu.com/ubuntu/ trusty-updates/main linux-image-extra-3.13.0-93-generic amd64 3.13.0-93.140 [36.7 MB][0m
+[1;32m==> default: Get:8 http://archive.ubuntu.com/ubuntu/ trusty-updates/main linux-image-generic amd64 3.13.0.93.100 [2,276 B][0m
+[1;32m==> default: Get:9 http://archive.ubuntu.com/ubuntu/ trusty-updates/main linux-image-extra-virtual amd64 3.13.0.93.100 [1,766 B][0m
+[1;32m==> default: Fetched 70.1 MB in 16s (4,215 kB/s)[0m
+[1;32m==> default: Selecting previously unselected package libnl-3-200:amd64.[0m
+[1;32m==> default: (Reading database ... 62994 files and directories currently installed.)[0m
+[1;32m==> default: Preparing to unpack .../libnl-3-200_3.2.21-1ubuntu3_amd64.deb ...[0m
+[1;32m==> default: Unpacking libnl-3-200:amd64 (3.2.21-1ubuntu3) ...[0m
+[1;32m==> default: Selecting previously unselected package libnl-genl-3-200:amd64.[0m
+[1;32m==> default: Preparing to unpack .../libnl-genl-3-200_3.2.21-1ubuntu3_amd64.deb ...[0m
+[1;32m==> default: Unpacking libnl-genl-3-200:amd64 (3.2.21-1ubuntu3) ...[0m
+[1;32m==> default: Selecting previously unselected package wireless-regdb.[0m
+[1;32m==> default: Preparing to unpack .../wireless-regdb_2013.02.13-1ubuntu1_all.deb ...[0m
+[1;32m==> default: Unpacking wireless-regdb (2013.02.13-1ubuntu1) ...[0m
+[1;32m==> default: Selecting previously unselected package crda.[0m
+[1;32m==> default: Preparing to unpack .../crda_1.1.2-1ubuntu2_amd64.deb ...[0m
+[1;32m==> default: Unpacking crda (1.1.2-1ubuntu2) ...[0m
+[1;32m==> default: Selecting previously unselected package iw.[0m
+[1;32m==> default: Preparing to unpack .../archives/iw_3.4-1_amd64.deb ...[0m
+[1;32m==> default: Unpacking iw (3.4-1) ...[0m
+[1;32m==> default: Selecting previously unselected package linux-firmware.[0m
+[1;32m==> default: Preparing to unpack .../linux-firmware_1.127.22_all.deb ...[0m
+[1;32m==> default: Unpacking linux-firmware (1.127.22) ...[0m
+[1;32m==> default: Selecting previously unselected package linux-image-extra-3.13.0-93-generic.[0m
+[1;32m==> default: Preparing to unpack .../linux-image-extra-3.13.0-93-generic_3.13.0-93.140_amd64.deb ...[0m
+[1;32m==> default: Unpacking linux-image-extra-3.13.0-93-generic (3.13.0-93.140) ...[0m
+[1;32m==> default: Selecting previously unselected package linux-image-generic.[0m
+[1;32m==> default: Preparing to unpack .../linux-image-generic_3.13.0.93.100_amd64.deb ...[0m
+[1;32m==> default: Unpacking linux-image-generic (3.13.0.93.100) ...[0m
+[1;32m==> default: Selecting previously unselected package linux-image-extra-virtual.[0m
+[1;32m==> default: Preparing to unpack .../linux-image-extra-virtual_3.13.0.93.100_amd64.deb ...[0m
+[1;32m==> default: Unpacking linux-image-extra-virtual (3.13.0.93.100) ...[0m
+[1;32m==> default: Processing triggers for man-db (2.6.7.1-1ubuntu1) ...[0m
+[1;32m==> default: Setting up libnl-3-200:amd64 (3.2.21-1ubuntu3) ...[0m
+[1;32m==> default: Setting up libnl-genl-3-200:amd64 (3.2.21-1ubuntu3) ...[0m
+[1;32m==> default: Setting up wireless-regdb (2013.02.13-1ubuntu1) ...[0m
+[1;32m==> default: Setting up crda (1.1.2-1ubuntu2) ...[0m
+[1;32m==> default: Setting up iw (3.4-1) ...[0m
+[1;32m==> default: Setting up linux-firmware (1.127.22) ...[0m
+[1;32m==> default: Setting up linux-image-extra-3.13.0-93-generic (3.13.0-93.140) ...[0m
+[1;31m==> default: run-parts: executing /etc/kernel/postinst.d/apt-auto-removal[0m
+[1;31m==> default:  3.13.0-93-generic[0m
+[1;31m==> default:  /boot/vmlinuz-3.13.0-93-generic[0m
+[1;31m==> default: run-parts: executing /etc/kernel/postinst.d/dkms[0m
+[1;31m==> default:  3.13.0-93-generic[0m
+[1;31m==> default:  /boot/vmlinuz-3.13.0-93-generic[0m
+[1;31m==> default: run-parts: executing /etc/kernel/postinst.d/initramfs-tools[0m
+[1;31m==> default:  3.13.0-93-generic[0m
+[1;31m==> default:  /boot/vmlinuz-3.13.0-93-generic[0m
+[1;31m==> default: update-initramfs: Generating /boot/initrd.img-3.13.0-93-generic[0m
+[1;31m==> default: run-parts: executing /etc/kernel/postinst.d/update-notifier[0m
+[1;31m==> default:  3.13.0-93-generic[0m
+[1;31m==> default:  /boot/vmlinuz-3.13.0-93-generic[0m
+[1;31m==> default: run-parts: executing /etc/kernel/postinst.d/zz-update-grub[0m
+[1;31m==> default:  3.13.0-93-generic[0m
+[1;31m==> default:  /boot/vmlinuz-3.13.0-93-generic[0m
+[1;31m==> default: Generating grub configuration file ...[0m
+[1;31m==> default: Found linux image: /boot/vmlinuz-3.13.0-93-generic[0m
+[1;31m==> default: Found initrd image: /boot/initrd.img-3.13.0-93-generic[0m
+[1;31m==> default: done[0m
+[1;32m==> default: Setting up linux-image-generic (3.13.0.93.100) ...[0m
+[1;32m==> default: Setting up linux-image-extra-virtual (3.13.0.93.100) ...[0m
+[1;32m==> default: Processing triggers for libc-bin (2.19-0ubuntu6.9) ...[0m
+[1;32m==> default: apparmor is enabled in the kernel and apparmor utils were already installed[0m
+[1;31m==> default: + [0m
+[1;31m==> default: sh[0m
+[1;31m==> default:  -c[0m
+[1;31m==> default:  apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D[0m
+[1;32m==> default: Executing: gpg --ignore-time-conflict --no-options --no-default-keyring --homedir /tmp/tmp.jAP7f3WK4K --no-auto-check-trustdb --trust-model always --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D[0m
+[1;31m==> default: gpg: [0m
+[1;31m==> default: requesting key 2C52609D from hkp server ha.pool.sks-keyservers.net[0m
+[1;31m==> default: gpg: [0m
+[1;31m==> default: key 2C52609D: public key "Docker Release Tool (releasedocker) <docker@docker.com>" imported[0m
+[1;31m==> default: gpg: [0m
+[1;31m==> default: Total number processed: 1[0m
+[1;31m==> default: gpg: [0m
+[1;31m==> default:               imported: 1[0m
+[1;31m==> default:   (RSA: 1)[0m
+[1;31m==> default: + [0m
+[1;31m==> default: break[0m
+[1;31m==> default: + [0m
+[1;31m==> default: sh[0m
+[1;31m==> default:  -c[0m
+[1;31m==> default:  apt-key adv -k 58118E89F3A912897C070ADBF76221572C52609D >/dev/null[0m
+[1;31m==> default: + [0m
+[1;31m==> default: sh[0m
+[1;31m==> default:  -c[0m
+[1;31m==> default:  mkdir -p /etc/apt/sources.list.d[0m
+[1;31m==> default: + [0m
+[1;31m==> default: dpkg[0m
+[1;31m==> default:  --print-architecture[0m
+[1;31m==> default: + [0m
+[1;31m==> default: sh[0m
+[1;31m==> default:  -c[0m
+[1;31m==> default:  echo deb \[arch=amd64\] https://apt.dockerproject.org/repo ubuntu-trusty main > /etc/apt/sources.list.d/docker.list[0m
+[1;31m==> default: + [0m
+[1;31m==> default: sh[0m
+[1;31m==> default:  -c[0m
+[1;31m==> default:  sleep 3; apt-get update; apt-get install -y -q docker-engine[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security InRelease[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty InRelease[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates InRelease[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/main Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports InRelease[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty Release.gpg[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/universe Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/main Sources[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/restricted Sources[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/universe Sources[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/multiverse Sources[0m
+[1;32m==> default: Hit http://security.ubuntu.com trusty-security/universe Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/restricted amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/multiverse Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/restricted Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-updates/universe Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty Release[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/main Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/restricted Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/universe Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/multiverse Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/restricted amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/universe amd64 Packages[0m
+[1;32m==> default: Get:1 https://apt.dockerproject.org ubuntu-trusty InRelease[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages[0m
+[1;32m==> default: Get:2 https://apt.dockerproject.org ubuntu-trusty/main amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/main Translation-en[0m
+[1;32m==> default: Get:3 https://apt.dockerproject.org ubuntu-trusty/main Translation-en_US[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/multiverse Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/restricted Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty-backports/universe Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/main Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/restricted Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/universe Sources[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/multiverse Sources[0m
+[1;32m==> default: Ign https://apt.dockerproject.org ubuntu-trusty/main Translation-en_US[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/main amd64 Packages[0m
+[1;32m==> default: Ign https://apt.dockerproject.org ubuntu-trusty/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/restricted amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/universe amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/multiverse amd64 Packages[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/main Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/multiverse Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/restricted Translation-en[0m
+[1;32m==> default: Hit http://archive.ubuntu.com trusty/universe Translation-en[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/main Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/multiverse Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/restricted Translation-en_US[0m
+[1;32m==> default: Ign http://archive.ubuntu.com trusty/universe Translation-en_US[0m
+[1;32m==> default: Fetched 25.7 kB in 2s (12.3 kB/s)
+==> default: Reading package lists...[0m
+[1;32m==> default: Reading package lists...[0m
+[1;32m==> default: Building dependency tree...[0m
+[1;32m==> default: Reading state information...[0m
+[1;32m==> default: The following extra packages will be installed:[0m
+[1;32m==> default:   aufs-tools cgroup-lite git git-man liberror-perl libsystemd-journal0[0m
+[1;32m==> default: Suggested packages:[0m
+[1;32m==> default:   git-daemon-run git-daemon-sysvinit git-doc git-el git-email git-gui gitk[0m
+[1;32m==> default:   gitweb git-arch git-bzr git-cvs git-mediawiki git-svn[0m
+[1;32m==> default: The following NEW packages will be installed:[0m
+[1;32m==> default:   aufs-tools cgroup-lite docker-engine git git-man liberror-perl[0m
+[1;32m==> default:   libsystemd-journal0[0m
+[1;32m==> default: 0 upgraded, 7 newly installed, 0 to remove and 1 not upgraded.
+==> default: Need to get 22.8 MB of archives.
+==> default: After this operation, 124 MB of additional disk space will be used.
+==> default: Get:1 http://archive.ubuntu.com/ubuntu/ trusty-updates/main libsystemd-journal0 amd64 204-5ubuntu20.19 [50.1 kB][0m
+[1;32m==> default: Get:2 http://archive.ubuntu.com/ubuntu/ trusty/universe aufs-tools amd64 1:3.2+20130722-1.1 [92.3 kB][0m
+[1;32m==> default: Get:3 http://archive.ubuntu.com/ubuntu/ trusty/main liberror-perl all 0.17-1.1 [21.1 kB][0m
+[1;32m==> default: Get:4 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git-man all 1:1.9.1-1ubuntu0.3 [699 kB][0m
+[1;32m==> default: Get:5 http://archive.ubuntu.com/ubuntu/ trusty-updates/main git amd64 1:1.9.1-1ubuntu0.3 [2,586 kB][0m
+[1;32m==> default: Get:6 https://apt.dockerproject.org/repo/ ubuntu-trusty/main docker-engine amd64 1.12.0-0~trusty [19.4 MB][0m
+[1;32m==> default: Get:7 http://archive.ubuntu.com/ubuntu/ trusty/main cgroup-lite all 1.9 [3,918 B][0m
+[1;32m==> default: Fetched 22.8 MB in 5s (4,136 kB/s)[0m
+[1;32m==> default: Selecting previously unselected package libsystemd-journal0:amd64.[0m
+[1;32m==> default: (Reading database ... 68156 files and directories currently installed.)[0m
+[1;32m==> default: Preparing to unpack .../libsystemd-journal0_204-5ubuntu20.19_amd64.deb ...[0m
+[1;32m==> default: Unpacking libsystemd-journal0:amd64 (204-5ubuntu20.19) ...[0m
+[1;32m==> default: Selecting previously unselected package aufs-tools.[0m
+[1;32m==> default: Preparing to unpack .../aufs-tools_1%3a3.2+20130722-1.1_amd64.deb ...[0m
+[1;32m==> default: Unpacking aufs-tools (1:3.2+20130722-1.1) ...[0m
+[1;32m==> default: Selecting previously unselected package docker-engine.[0m
+[1;32m==> default: Preparing to unpack .../docker-engine_1.12.0-0~trusty_amd64.deb ...[0m
+[1;32m==> default: Unpacking docker-engine (1.12.0-0~trusty) ...[0m
+[1;32m==> default: Selecting previously unselected package liberror-perl.[0m
+[1;32m==> default: Preparing to unpack .../liberror-perl_0.17-1.1_all.deb ...[0m
+[1;32m==> default: Unpacking liberror-perl (0.17-1.1) ...[0m
+[1;32m==> default: Selecting previously unselected package git-man.[0m
+[1;32m==> default: Preparing to unpack .../git-man_1%3a1.9.1-1ubuntu0.3_all.deb ...[0m
+[1;32m==> default: Unpacking git-man (1:1.9.1-1ubuntu0.3) ...[0m
+[1;32m==> default: Selecting previously unselected package git.[0m
+[1;32m==> default: Preparing to unpack .../git_1%3a1.9.1-1ubuntu0.3_amd64.deb ...[0m
+[1;32m==> default: Unpacking git (1:1.9.1-1ubuntu0.3) ...[0m
+[1;32m==> default: Selecting previously unselected package cgroup-lite.[0m
+[1;32m==> default: Preparing to unpack .../cgroup-lite_1.9_all.deb ...[0m
+[1;32m==> default: Unpacking cgroup-lite (1.9) ...[0m
+[1;32m==> default: Processing triggers for man-db (2.6.7.1-1ubuntu1) ...[0m
+[1;32m==> default: Processing triggers for ureadahead (0.100.0-16) ...[0m
+[1;32m==> default: Setting up libsystemd-journal0:amd64 (204-5ubuntu20.19) ...[0m
+[1;32m==> default: Setting up aufs-tools (1:3.2+20130722-1.1) ...[0m
+[1;32m==> default: Setting up docker-engine (1.12.0-0~trusty) ...[0m
+[1;32m==> default: docker start/running, process 13793[0m
+[1;32m==> default: Setting up liberror-perl (0.17-1.1) ...[0m
+[1;32m==> default: Setting up git-man (1:1.9.1-1ubuntu0.3) ...[0m
+[1;32m==> default: Setting up git (1:1.9.1-1ubuntu0.3) ...[0m
+[1;32m==> default: Setting up cgroup-lite (1.9) ...[0m
+[1;32m==> default: cgroup-lite start/running[0m
+[1;32m==> default: Processing triggers for libc-bin (2.19-0ubuntu6.9) ...[0m
+[1;32m==> default: Processing triggers for ureadahead (0.100.0-16) ...[0m
+[1;31m==> default: + [0m
+[1;31m==> default: sh[0m
+[1;31m==> default:  -c[0m
+[1;31m==> default:  docker version[0m
+[1;32m==> default: Client:
+==> default:  Version:      1.12.0
+==> default:  API version:  1.24
+==> default:  Go version:   go1.6.3
+==> default:  Git commit:   8eab29e
+==> default:  Built:        Thu Jul 28 22:00:36 2016
+==> default:  OS/Arch:      linux/amd64
+==> default: 
+==> default: Server:
+==> default:  Version:      1.12.0
+==> default:  API version:  1.24
+==> default:  Go version:   go1.6.3
+==> default:  Git commit:   8eab29e
+==> default:  Built:        Thu Jul 28 22:00:36 2016
+==> default:  OS/Arch:      linux/amd64[0m
+[1;32m==> default: 
+==> default: If you would like to use Docker as a non-root user, you should now consider
+==> default: adding your user to the "docker" group with something like:
+==> default: 
+==> default:   sudo usermod -aG docker your-user
+==> default: 
+==> default: Remember that you will have to log out and back in for this to take effect![0m
+[1;31m==> default: groupadd: group 'docker' already exists[0m
+[1;32m==> default: setup default config /etc/default/docker[0m
+[1;32m==> default: docker stop/waiting[0m
+[1;32m==> default: docker start/running, process 14010[0m
+[1m==> default: Configuring proxy for Docker...[0m
+[1m==> default: Running provisioner: shell...[0m
+[0m    default: Running: C:/Users/BOBILL~1/AppData/Local/Temp/vagrant-shell20160811-12048-1u766c9.sh[0m
 [1;31m==> default: stdin: is not a tty[0m
 [1;32m==> default: $$$ docker START[0m
+[1m==> default: Configuring proxy for Docker...[0m
 [1m==> default: Running provisioner: shell...[0m
 [0m    default: Running: inline script[0m
 [1;31m==> default: stdin: is not a tty[0m
-[1;32m==> default: *_*_*_*_*_*_* web server started, address IP 192.168.56.101 *_*_*_*_*_*_*[0m
+[1;32m==> default: *_*_*_*_*_*_* web server started, address IP 192.168.56.79 *_*_*_*_*_*_*[0m
+[1m==> default: Configuring proxy for Docker...[0m

@@ -1,0 +1,95 @@
+# -*- mode: ruby -*-
+
+vagrant_home = (ENV['VAGRANT_HOME'].to_s.split.join.length > 0) ? ENV['VAGRANT_HOME'] : "#{ENV['HOME']}/.vagrant.d"
+vagrant_dot  = (ENV['VAGRANT_DOTFILE_PATH'].to_s.split.join.length > 0) ? ENV['VAGRANT_DOTFILE_PATH'] : "#{dir}/.vagrant"
+
+Vagrant.configure('2') do |config|
+  config.vm.box     = "#{data['box']}"
+  config.vm.box_url = "#{data['box_url']}"
+  config.ssh.insert_key = false
+  if data['hostname'].to_s.strip.length != 0
+    config.vm.hostname = "#{data['hostname']}"
+  end
+  if data['box_version'].to_s.strip.length != 0
+    config.vm.box_version = "#{data['box_version']}"
+  end
+
+  if data['private_network'].to_s != ''
+    config.vm.network 'private_network', ip: "#{data['private_network']}"
+  end
+
+  if data['forwarded_port'].to_s.strip.length != 0
+    forwarded_port =data['forwarded_port'].to_i
+  else
+    forwarded_port = 5807
+  end
+  config.vm.network :forwarded_port, guest: 22, host: forwarded_port, auto_correct: true
+
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    if #{ENV['HTTP_PROXY']}.to_s.strip.length != 0
+      config.proxy.http    = "#{ENV['HTTP_PROXY']}"
+    end
+    if #{ENV['HTTPS_PROXY']}.to_s.strip.length != 0
+      config.proxy.https    = "#{ENV['HTTPS_PROXY']}"
+    end
+    config.proxy.no_proxy = "localhost,127.0.0.1"
+  end
+  if data['docroot'].to_s.strip.length != 0
+    config.vm.synced_folder "#{data['www_folder']}", "#{data['docroot']}", group: "www-data", owner: "www-data", mount_options: ['dmode=775', 'fmode=774']
+  end
+  config.vm.synced_folder "../common", "/home/vagrant/common", create: true,group: "vagrant", owner: "vagrant", mount_options: ['dmode=775', 'fmode=774']
+  if !data['synced_folder'].nil?
+      data['synced_folder'].each do |i, folder|
+        if folder['source'] != '' && folder['target'] != ''
+          config.vm.synced_folder "#{folder['source']}", "#{folder['target']}", create: true,group: "vagrant", owner: "vagrant", mount_options: ['dmode=775', 'fmode=774']
+        end
+      end
+  end
+
+  config.vm.usable_port_range = (10200..10500)
+
+
+
+  config.vm.provider "virtualbox" do |virtualbox|
+    if data['showgui'].nil?
+      virtualbox.gui = true
+    else
+      if data['showgui'].to_i == 1
+        virtualbox.gui = true
+      end
+    end
+    virtualbox.customize ['modifyvm', :id, "--natdnshostresolver1", "on"]
+    virtualbox.customize ['modifyvm', :id, '--memory', "#{data['memory']}"]
+    virtualbox.customize ['modifyvm', :id, '--cpus', "#{data['cpus']}"]
+    virtualbox.customize ['setextradata', :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate//vagrant", '1']
+    if data['hostname'].to_s.strip.length != 0
+      virtualbox.customize ['modifyvm', :id, '--name', config.vm.hostname]
+    end
+  end
+  ssh_username = "vagrant"
+  config.ssh.username = "vagrant"
+
+  if data['nictype'].to_s.strip.length != 0
+     config.vm.provider "virtualbox" do |vb|
+       ### Change network card to PCnet-FAST III
+       # For NAT adapter
+       vb.customize ["modifyvm", :id, "--nictype1", "#{data['nictype']}"]
+       # For host-only adapter
+       vb.customize ["modifyvm", :id, "--nictype2", "#{data['nictype']}"]
+     end
+  end
+  config.vm.provision :shell, path: "setup/provision.sh"
+#  config.vm.provision :shell, path: "../common/script/provision.sh"
+  if !data['composants'].nil?
+    data['composants'].each do |composant|
+      config.vm.provision :shell, path: "../common/script/#{composant}.sh"
+    end
+  end
+  config.vm.provision :shell, path: "setup/start.sh", run: "always"
+  if data['private_network'].to_s != ''
+    config.vm.provision "shell", run: "always", inline: "echo '*_*_*_*_*_*_* web server started, address IP '#{data['private_network']}' *_*_*_*_*_*_*'"
+  end
+
+
+
+end
